@@ -5,3 +5,4 @@ class CategoryType(Enum):
     DONOR = 'donor'
     VOLUNTARY = 'voluntary'
     SERVED = 'served'
+    VISITOR = 'visitor'
