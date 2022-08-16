@@ -1,1 +1,3 @@
-# TODO EXERCISE
+from setup import init
+
+init()
