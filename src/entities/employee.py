@@ -1,5 +1,5 @@
-from category import Category
-from src.enums.category_type import CategoryType
+from .category import Category
+from enums.category_type import CategoryType
 
 class Employee(Category):
     def __init__(self, rg, cpf, role):

@@ -1,5 +1,5 @@
-from category import Category
-from src.enums.category_type import CategoryType
+from .category import Category
+from enums.category_type import CategoryType
 
 class Visitor(Category):
     def __init__(self, genre, has_allergies, is_married):

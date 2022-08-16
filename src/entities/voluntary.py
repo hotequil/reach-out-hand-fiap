@@ -1,5 +1,5 @@
-from category import Category
-from src.enums.category_type import CategoryType
+from .category import Category
+from enums.category_type import CategoryType
 
 class Voluntary(Category):
     def __init__(self, district, city, state):

@@ -1,5 +1,5 @@
-from category import Category
-from src.enums.category_type import CategoryType
+from .category import Category
+from enums.category_type import CategoryType
 
 class Served(Category):
     def __init__(self, salary, children_quantity, is_employed):
