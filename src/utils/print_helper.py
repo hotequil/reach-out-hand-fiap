@@ -1,5 +1,5 @@
-small_break_line = "\n"
-break_line = f"{small_break_line}{small_break_line}"
+break_line = "\n"
+double_break_line = f"{break_line}{break_line}"
 
 def print_space():
     print("")
