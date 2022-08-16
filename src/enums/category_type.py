@@ -4,3 +4,4 @@ class CategoryType(Enum):
     EMPLOYEE = 'employee'
     DONOR = 'donor'
     VOLUNTARY = 'voluntary'
+    SERVED = 'served'
