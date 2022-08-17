@@ -27,3 +27,11 @@ def print_title_both(title):
     print_space()
     print(title)
     print_space()
+
+def question(text):
+    value = input(text).strip()
+
+    if value != '': return value
+    else:
+        print_title_both("* Digite algo válido, por favor")
+        return question(text)
