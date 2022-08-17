@@ -1,8 +1,8 @@
 from enum import Enum
 
 class CategoryType(Enum):
-    EMPLOYEE = 'employee'
-    DONOR = 'donor'
-    VOLUNTARY = 'voluntary'
-    SERVED = 'served'
-    VISITOR = 'visitor'
+    EMPLOYEE = 'Funcionário'
+    DONOR = 'Doador'
+    VOLUNTARY = 'Voluntário'
+    SERVED = 'Atendido'
+    VISITOR = 'Visitante'
