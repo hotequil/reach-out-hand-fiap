@@ -1,5 +1,6 @@
 break_line = "\n"
 double_break_line = f"{break_line}{break_line}"
+separator = ', '
 
 def print_space():
     print("")
