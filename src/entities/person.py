@@ -1,11 +1,14 @@
-# TODO: set categories and data customized
-
 import re
 from enums.category_number import CategoryNumber
 from enums.category_type import CategoryType
-from utils.print_helper import double_break_line, break_line, question, print_space, normal_error
-from utils.categories_helper import is_valid_category_number
+from utils.print_helper import double_break_line, break_line, question, print_space, normal_error, separator, print_title_bottom, print_title_both
+from utils.categories_helper import get_invalid_categories, has_conflicted_category, conflicted_category_error
 from utils.list_helper import has_len
+from entities.employee import Employee
+from entities.voluntary import Voluntary
+from entities.donor import Donor
+from entities.served import Served
+from entities.visitor import Visitor
 
 class Person:
     def __init__(self, full_name, birth_date, phone, email):
@@ -19,7 +22,6 @@ class Person:
     def add_categories(self):
         print_space()
 
-        separator = ', '
         categories = question(
             f"Por fim, digite separando por vírgulas as categorias de seu desejo para essa nova pessoa (exemplo: {CategoryNumber.EMPLOYEE.value}{separator}{CategoryNumber.VOLUNTARY.value}{separator}{CategoryNumber.VISITOR.value}):"
             f"{double_break_line}{CategoryNumber.EMPLOYEE.value} - {CategoryType.EMPLOYEE.value};"
@@ -47,16 +49,46 @@ class Person:
             normal_error()
             return self.add_categories()
 
-        invalid_categories = list(map(str, [category_number for category_number in categories if not is_valid_category_number(category_number)]))
+        invalid_categories = get_invalid_categories(categories)
 
         if has_len(invalid_categories):
             print_space()
             normal_error(f"Tente novamente, você digitou as seguintes categorias inválidas: {separator.join(invalid_categories)}")
             return self.add_categories()
 
-        if (CategoryNumber.SERVED.value in categories) and ((CategoryNumber.EMPLOYEE.value in categories) or (CategoryNumber.DONOR.value in categories)):
+        if has_conflicted_category(categories):
             print_space()
-            normal_error(f"{CategoryType.EMPLOYEE.value} ou {CategoryType.DONOR.value.lower()} não podem estar em uma pessoa que tem a categoria {CategoryType.SERVED.value.lower()}")
+            normal_error(conflicted_category_error)
             return self.add_categories()
 
-        # self._categories.append(value)
+        for category_number in categories:
+            category = None
+
+            if category_number == CategoryNumber.EMPLOYEE.value: category = CategoryType.EMPLOYEE.value
+            elif category_number == CategoryNumber.VOLUNTARY.value: category = CategoryType.VOLUNTARY.value
+            elif category_number == CategoryNumber.DONOR.value: category = CategoryType.DONOR.value
+            elif category_number == CategoryNumber.SERVED.value: category = CategoryType.SERVED.value
+            elif category_number == CategoryNumber.VISITOR.value: category = CategoryType.VISITOR.value
+
+            if category is not None: self._categories.append(category)
+
+    def add_data(self):
+        print_title_bottom("Chegou a hora de colocar as informações adicionais referente a cada categoria adicionada anteriormente!")
+
+        for category_type in self._categories:
+            print_title_both(f"# {category_type}")
+
+            category_person = None
+
+            if category_type is CategoryType.EMPLOYEE.value:
+                category_person = Employee(question("Digite seu RG: "), question("Digite seu CPF: "), question("Digite seu cargo profissional: "))
+            elif category_type is CategoryType.VOLUNTARY.value:
+                category_person = Voluntary(question("Digite seu bairro: "), question("Digite sua cidade: "), question("Digite seu estado: "))
+            elif category_type is CategoryType.DONOR.value:
+                category_person = Donor(question("Digite seu tipo sanguíneo: "), question("Digite um presente para doar: "), question("Digite sua altura: "))
+            elif category_type is CategoryType.SERVED.value:
+                category_person = Served(question("Digite seu salário: "), question("Digite quantos filhos você tem: "), question("Digite se está empregado: "))
+            elif category_type is CategoryType.VISITOR.value:
+                category_person = Visitor(question("Digite seu gênero: "), question("Digite se tem alguma alergia: "), question("Digite se é casado: "))
+
+            self._data[category_type] = category_person
