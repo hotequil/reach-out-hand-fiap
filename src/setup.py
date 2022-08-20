@@ -9,6 +9,8 @@ def init():
     stop = False
 
     while not stop:
+        print_title_top("# Menu")
+
         option = int(input(f"Escolha uma das seguintes opções abaixo: {double_break_line}0) Sair do sistema; {break_line}1) Cadastrar pessoa; {double_break_line}Resposta: "))
 
         if option == SetupOption.STOP_SYSTEM.value: stop = True
