@@ -25,7 +25,7 @@ class Person:
 
     @property
     def categories(self):
-        return self._categories
+        return sorted(self._categories)
 
     def add_categories(self):
         print_space()
