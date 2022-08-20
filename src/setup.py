@@ -1,4 +1,4 @@
-from utils.print_helper import print_title_top, double_break_line, break_line, print_bar_top, print_title_bottom, print_bar_bottom, print_title_both
+from utils.print_helper import print_title_top, double_break_line, break_line, print_bar_top, print_title_bottom, print_bar_bottom, print_title_both, print_space, normal_error
 from enums.setup_option import SetupOption
 from factories.person import create_person
 from data_structure.people import PeopleAvlTree
@@ -21,7 +21,9 @@ def init():
         elif option == SetupOption.ADD_PERSON.value: people.add(create_person())
         elif option == SetupOption.LIST_PEOPLE.value: people.list()
         else:
-            print_title_both("Você digitou uma opção inválida, tente novamente")
+            print_space()
+            normal_error("Você digitou uma opção inválida, tente novamente!")
+            print_space()
             print_bar_top()
 
     print_bar_bottom()
