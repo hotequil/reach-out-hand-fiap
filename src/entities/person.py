@@ -23,7 +23,7 @@ class Person:
         print_space()
 
         categories = question(
-            f"Por fim, digite separando por vírgulas as categorias de seu desejo para essa nova pessoa (exemplo: {CategoryNumber.EMPLOYEE.value}{separator}{CategoryNumber.VOLUNTARY.value}{separator}{CategoryNumber.VISITOR.value}):"
+            f"Por fim, digite separando por vírgulas os números das categorias de seu desejo para essa nova pessoa (exemplo: {CategoryNumber.EMPLOYEE.value}{separator}{CategoryNumber.VOLUNTARY.value}{separator}{CategoryNumber.VISITOR.value}):"
             f"{double_break_line}{CategoryNumber.EMPLOYEE.value} - {CategoryType.EMPLOYEE.value};"
             f"{break_line}{CategoryNumber.VOLUNTARY.value} - {CategoryType.VOLUNTARY.value};"
             f"{break_line}{CategoryNumber.DONOR.value} - {CategoryType.DONOR.value};"
@@ -73,7 +73,7 @@ class Person:
             if category is not None: self._categories.append(category)
 
     def add_data(self):
-        print_title_bottom("Chegou a hora de colocar as informações adicionais referente a cada categoria adicionada anteriormente!")
+        print_title_bottom("Chegou a hora de colocar as informações adicionais referentes a cada categoria adicionada anteriormente!")
 
         for category_type in self._categories:
             print_title_both(f"# {category_type}")
