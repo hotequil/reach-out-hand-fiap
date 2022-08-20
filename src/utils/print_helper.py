@@ -44,3 +44,9 @@ def question(text):
         normal_error()
         print_space()
         return question(text)
+
+def separate_items(items):
+    return separator.join(items)
+
+def show_info(title, text):
+    print(f"- {title}: {text}")
