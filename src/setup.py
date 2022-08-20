@@ -3,7 +3,7 @@ from enums.setup_option import SetupOption
 from factories.person import create_person
 
 def init():
-    print_title_top("Bem-vindo ao sistema de cadastro da ONG Estenda à Mão!")
+    print_title_top("Bem-vindo ao menu do sistema de cadastro da ONG Estenda à Mão!")
     print_bar_top()
 
     stop = False

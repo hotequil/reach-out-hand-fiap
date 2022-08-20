@@ -15,5 +15,5 @@ def create_person():
     person.add_categories()
     person.add_data()
 
-    print_title_both("Pessoa cadastrada com sucesso!")
+    print_title_both("Pessoa cadastrada com sucesso! Você voltará para o menu agora.")
     print_bar_top()
