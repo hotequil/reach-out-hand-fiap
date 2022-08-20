@@ -19,6 +19,14 @@ class Person:
         self._categories = []
         self._data = {}
 
+    @property
+    def full_name(self):
+        return self._full_name
+
+    @property
+    def categories(self):
+        return self._categories
+
     def add_categories(self):
         print_space()
 

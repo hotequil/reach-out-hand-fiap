@@ -17,3 +17,5 @@ def create_person():
 
     print_title_both("Pessoa cadastrada com sucesso! Você voltará para o menu agora.")
     print_bar_top()
+
+    return person
