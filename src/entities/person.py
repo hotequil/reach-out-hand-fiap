@@ -1,7 +1,7 @@
 import re
 from enums.category_number import CategoryNumber
 from enums.category_type import CategoryType
-from utils.print_helper import double_break_line, break_line, question, print_space, normal_error, separator, print_title_bottom, print_title_both
+from utils.print_helper import double_break_line, break_line, question, print_space, normal_error, separator, print_title_bottom, print_title_both, separate_items
 from utils.categories_helper import get_invalid_categories, has_conflicted_category, conflicted_category_error
 from utils.list_helper import has_len
 from entities.employee import Employee
@@ -24,8 +24,24 @@ class Person:
         return self._full_name
 
     @property
+    def birth_date(self):
+        return self._birth_date
+
+    @property
+    def phone(self):
+        return self._phone
+
+    @property
+    def email(self):
+        return self._email
+
+    @property
     def categories(self):
         return sorted(self._categories)
+
+    @property
+    def data(self):
+        return self._data.items()
 
     def add_categories(self):
         print_space()
@@ -61,7 +77,7 @@ class Person:
 
         if has_len(invalid_categories):
             print_space()
-            normal_error(f"Tente novamente, você digitou as seguintes categorias inválidas: {separator.join(invalid_categories)}")
+            normal_error(f"Tente novamente, você digitou as seguintes categorias inválidas: {separate_items(invalid_categories)}")
             return self.add_categories()
 
         if has_conflicted_category(categories):
