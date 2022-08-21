@@ -47,7 +47,7 @@ class Person:
         print_space()
 
         categories = question(
-            f"Por fim, digite separando por vírgulas os números das categorias de seu desejo para essa nova pessoa (exemplo: {CategoryNumber.EMPLOYEE.value}{separator}{CategoryNumber.VOLUNTARY.value}{separator}{CategoryNumber.VISITOR.value}):"
+            f"Agora, digite separando por vírgulas os números das categorias de seu desejo para essa nova pessoa (exemplo: {CategoryNumber.EMPLOYEE.value}{separator}{CategoryNumber.VOLUNTARY.value}{separator}{CategoryNumber.VISITOR.value}):"
             f"{double_break_line}{CategoryNumber.EMPLOYEE.value} - {CategoryType.EMPLOYEE.value};"
             f"{break_line}{CategoryNumber.VOLUNTARY.value} - {CategoryType.VOLUNTARY.value};"
             f"{break_line}{CategoryNumber.DONOR.value} - {CategoryType.DONOR.value};"
@@ -97,7 +97,7 @@ class Person:
             if category is not None: self._categories.append(category)
 
     def add_data(self):
-        print_title_bottom("Chegou a hora de colocar as informações adicionais referentes a cada categoria adicionada anteriormente!")
+        print_title_bottom("Chegou a hora de colocar as informações referentes a cada categoria adicionada anteriormente!")
 
         for category_type in self._categories:
             print_title_both(f"# {category_type}")
@@ -105,14 +105,14 @@ class Person:
             category_person = None
 
             if category_type is CategoryType.EMPLOYEE.value:
-                category_person = Employee(question("Digite seu RG: "), question("Digite seu CPF: "), question("Digite seu cargo profissional: "))
+                category_person = Employee(question("Digite o RG: "), question("Digite o CPF: "), question("Digite o cargo profissional: "))
             elif category_type is CategoryType.VOLUNTARY.value:
-                category_person = Voluntary(question("Digite seu bairro: "), question("Digite sua cidade: "), question("Digite seu estado: "))
+                category_person = Voluntary(question("Digite o bairro: "), question("Digite a cidade: "), question("Digite o estado: "))
             elif category_type is CategoryType.DONOR.value:
-                category_person = Donor(question("Digite seu tipo sanguíneo: "), question("Digite um presente para doar: "), question("Digite sua altura: "))
+                category_person = Donor(question("Digite o tipo sanguíneo: "), question("Digite o presente para doação: "), question("Digite a altura: "))
             elif category_type is CategoryType.SERVED.value:
-                category_person = Served(question("Digite seu salário: "), question("Digite quantos filhos você tem: "), question("Digite se está empregado: "))
+                category_person = Served(question("Digite o salário: "), question("Digite a quantidade de filhos: "), question("Digite se está empregado: "))
             elif category_type is CategoryType.VISITOR.value:
-                category_person = Visitor(question("Digite seu gênero: "), question("Digite se tem alguma alergia: "), question("Digite se é casado: "))
+                category_person = Visitor(question("Digite o gênero: "), question("Digite se tem alergia: "), question("Digite se é casado: "))
 
             self._data[category_type] = category_person

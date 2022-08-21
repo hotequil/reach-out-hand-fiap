@@ -2,7 +2,7 @@ from enums.category_number import CategoryNumber
 from enums.category_type import CategoryType
 
 category_numbers_list = [category_number.value for category_number in CategoryNumber]
-conflicted_category_error = f"{CategoryType.EMPLOYEE.value} ou {CategoryType.DONOR.value} não pode estar junto com a categoria {CategoryType.SERVED.value}"
+conflicted_category_error = f"A categoria {CategoryType.EMPLOYEE.value} ou {CategoryType.DONOR.value} não pode estar junto com a categoria {CategoryType.SERVED.value}"
 
 def is_valid_category_number(category_number):
     return category_number in category_numbers_list

@@ -1,6 +1,6 @@
 from .category import Category
 from enums.category_type import CategoryType
-from utils.print_helper import show_info
+from utils.print_helper import list_item
 
 class Donor(Category):
     def __init__(self, blood_type, gift_to_donate, height):
@@ -11,6 +11,6 @@ class Donor(Category):
         self._height = height
 
     def show_info(self):
-        show_info("Tipo sanguíneo", self._blood_type)
-        show_info("Presente para doação", self._gift_to_donate)
-        show_info("Altura", self._height)
+        list_item("Tipo sanguíneo", self._blood_type)
+        list_item("Presente para doação", self._gift_to_donate)
+        list_item("Altura", self._height)

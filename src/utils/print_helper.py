@@ -48,5 +48,5 @@ def question(text):
 def separate_items(items):
     return separator.join(items)
 
-def show_info(title, text):
+def list_item(title, text):
     print(f"- {title}: {text}")

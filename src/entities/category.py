@@ -6,4 +6,4 @@ class Category(ABC):
 
     @abstractmethod
     def show_info(self):
-        print("Should be implemented!")
+        print("Esse método deve ser implementado!")

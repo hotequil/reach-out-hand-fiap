@@ -1,6 +1,6 @@
 from .category import Category
 from enums.category_type import CategoryType
-from utils.print_helper import show_info
+from utils.print_helper import list_item
 
 class Employee(Category):
     def __init__(self, rg, cpf, role):
@@ -11,6 +11,6 @@ class Employee(Category):
         self._role = role
 
     def show_info(self):
-        show_info("RG", self._rg)
-        show_info("CPF", self._cpf)
-        show_info("Cargo profissional", self._role)
+        list_item("RG", self._rg)
+        list_item("CPF", self._cpf)
+        list_item("Cargo profissional", self._role)

@@ -1,4 +1,4 @@
-from utils.print_helper import print_title_top, double_break_line, break_line, print_bar_top, print_title_bottom, print_bar_bottom, print_title_both, print_space, normal_error
+from utils.print_helper import print_title_top, double_break_line, break_line, print_bar_top, print_title_bottom, print_bar_bottom, print_space, normal_error
 from enums.setup_option import SetupOption
 from factories.person import create_person
 from data_structure.people import PeopleAvlTree
@@ -13,7 +13,7 @@ def init():
     while not stop:
         print_title_top("# Menu")
 
-        option = input(f"Escolha uma das seguintes opções abaixo: {double_break_line}{SetupOption.STOP_SYSTEM.value}) Sair do sistema; {break_line}{SetupOption.ADD_PERSON.value}) Cadastrar pessoa; {break_line}{SetupOption.LIST_PEOPLE.value}) Listar pessoas ordenadas por nome e categorias; {break_line}{SetupOption.SEARCH_PERSON.value}) Buscar pessoa por nome; {double_break_line}Resposta: ")
+        option = input(f"Escolha uma das seguintes opções abaixo: {double_break_line}{SetupOption.STOP_SYSTEM.value}) Sair do sistema; {break_line}{SetupOption.ADD_PERSON.value}) Cadastrar uma nova pessoa; {break_line}{SetupOption.LIST_PEOPLE.value}) Listar pessoas ordenadas por nome e categorias; {break_line}{SetupOption.SEARCH_PERSON.value}) Buscar pessoa por nome; {double_break_line}Resposta: ")
 
         if option.isnumeric(): option = int(option)
 
@@ -23,9 +23,9 @@ def init():
         elif option == SetupOption.SEARCH_PERSON.value: people.search()
         else:
             print_space()
-            normal_error("Você digitou uma opção inválida, tente novamente!")
+            normal_error("Você digitou uma opção inválida, tente novamente.")
             print_space()
             print_bar_top()
 
     print_bar_bottom()
-    print_title_bottom("Muito obrigado e volte sempre!")
+    print_title_bottom("Muito obrigado e volte sempre.")
