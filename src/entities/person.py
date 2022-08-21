@@ -104,15 +104,15 @@ class Person:
 
             category_person = None
 
-            if category_type is CategoryType.EMPLOYEE.value:
+            if category_type == CategoryType.EMPLOYEE.value:
                 category_person = Employee(question("Digite o RG: "), question("Digite o CPF: "), question("Digite o cargo profissional: "))
-            elif category_type is CategoryType.VOLUNTARY.value:
+            elif category_type == CategoryType.VOLUNTARY.value:
                 category_person = Voluntary(question("Digite o bairro: "), question("Digite a cidade: "), question("Digite o estado: "))
-            elif category_type is CategoryType.DONOR.value:
+            elif category_type == CategoryType.DONOR.value:
                 category_person = Donor(question("Digite o tipo sanguíneo: "), question("Digite o presente para doação: "), question("Digite a altura: "))
-            elif category_type is CategoryType.SERVED.value:
+            elif category_type == CategoryType.SERVED.value:
                 category_person = Served(question("Digite o salário: "), question("Digite a quantidade de filhos: "), question("Digite se está empregado: "))
-            elif category_type is CategoryType.VISITOR.value:
+            elif category_type == CategoryType.VISITOR.value:
                 category_person = Visitor(question("Digite o gênero: "), question("Digite se tem alergia: "), question("Digite se é casado: "))
 
             self._data[category_type] = category_person

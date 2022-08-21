@@ -81,11 +81,11 @@ class PeopleAvlTree:
         first_full_name = ordered_full_names[0]
         has_node_left = node.left is not None
         has_node_right = node.right is not None
-        first_full_name_is_full_name = first_full_name is full_name
+        first_full_name_is_full_name = first_full_name == full_name
 
         comparisons += 1
 
-        if full_name is node_full_name: return { 'comparisons': comparisons, 'found_person': person }
+        if full_name == node_full_name: return { 'comparisons': comparisons, 'found_person': person }
 
         comparisons += 1
 
