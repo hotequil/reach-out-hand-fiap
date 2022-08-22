@@ -57,6 +57,7 @@ class PeopleAvlTree:
     def _add(self, person, node):
         people = [person, node.person]
         ordered_people = sorted(people, key=attrgetter('full_name', 'categories'))
+        ordered_people = sorted(ordered_people, key=lambda current_person: current_person.full_name.lower())
         first_ordered_person = ordered_people[0]
 
         if first_ordered_person is person:
