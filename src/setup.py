@@ -13,7 +13,7 @@ def init():
     while not stop:
         print_title_top("# Menu")
 
-        option = input(f"Escolha uma das seguintes opções abaixo: {double_break_line}{SetupOption.STOP_SYSTEM.value}) Sair do sistema; {break_line}{SetupOption.ADD_PERSON.value}) Cadastrar uma nova pessoa; {break_line}{SetupOption.LIST_PEOPLE.value}) Listar pessoas ordenadas por nome e categorias; {break_line}{SetupOption.SEARCH_PERSON.value}) Buscar pessoa por nome; {double_break_line}Resposta: ")
+        option = input(f"Escolha uma das seguintes opções abaixo: {double_break_line}{SetupOption.STOP_SYSTEM.value}) Sair do sistema; {break_line}{SetupOption.ADD_PERSON.value}) Cadastrar uma nova pessoa; {break_line}{SetupOption.LIST_PEOPLE.value}) Listar pessoas ordenadas por nome e categorias; {break_line}{SetupOption.SEARCH_PERSON.value}) Buscar pessoa por nome; {double_break_line}Resposta: ").strip()
 
         if option.isnumeric(): option = int(option)
 
