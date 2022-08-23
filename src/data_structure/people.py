@@ -78,7 +78,7 @@ class PeopleAvlTree:
     def _search(self, full_name, comparisons, node):
         person = node.person
         node_full_name = person.full_name
-        ordered_full_names = sorted([full_name, node_full_name])
+        ordered_full_names = sorted([full_name, node_full_name], key=lambda name: name.lower())
         first_full_name = ordered_full_names[0]
         has_node_left = node.left is not None
         has_node_right = node.right is not None
