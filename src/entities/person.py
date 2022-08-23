@@ -1,4 +1,5 @@
 import re
+from memory_profiler import profile
 from enums.category_number import CategoryNumber
 from enums.category_type import CategoryType
 from utils.print_helper import double_break_line, break_line, question, print_space, normal_error, separator, print_title_bottom, print_title_both, separate_items
@@ -43,6 +44,7 @@ class Person:
     def data(self):
         return self._data.items()
 
+    # @profile
     def add_categories(self):
         print_space()
 
@@ -96,6 +98,7 @@ class Person:
 
             if category is not None: self._categories.append(category)
 
+    # @profile
     def add_data(self):
         print_title_bottom("Chegou a hora de colocar as informações referentes a cada categoria adicionada anteriormente!")
 

@@ -1,3 +1,4 @@
+from memory_profiler import profile
 from operator import attrgetter
 from utils.print_helper import print_title_both, print_space, normal_error, print_bar_bottom, question, print_bar_top, print_title_bottom, separate_items, list_item
 
@@ -11,10 +12,12 @@ class PeopleAvlTree:
     def __init__(self):
         self._root = None
 
+    # @profile
     def add(self, person):
         if self._root is None: self._root = _PersonNode(person)
         else: self._add(person, self._root)
 
+    # @profile
     def list(self):
         print_bar_bottom()
         print_title_both("# Lista de pessoas ordenadas por nome e categorias")
@@ -25,6 +28,7 @@ class PeopleAvlTree:
         print_bar_bottom()
         print_space()
 
+    # @profile
     def search(self):
         print_bar_bottom()
         print_title_both("# Buscar pessoa por nome")
@@ -54,6 +58,7 @@ class PeopleAvlTree:
         print_title_both("Busca terminada e dados exibidos, iremos levar você para o menu.")
         print_bar_top()
 
+    # @profile
     def _add(self, person, node):
         people = [person, node.person]
         ordered_people = sorted(people, key=attrgetter('full_name', 'categories'))
@@ -67,6 +72,7 @@ class PeopleAvlTree:
             if node.right is None: node.right = _PersonNode(person)
             else: self._add(person, node.right)
 
+    # @profile
     def _list(self, node):
         if node is not None:
             person = node.person
@@ -75,6 +81,7 @@ class PeopleAvlTree:
             print(f"- {person.full_name} (categorias: {separate_items(person.categories)})")
             self._list(node.right)
 
+    # @profile
     def _search(self, full_name, comparisons, node):
         person = node.person
         node_full_name = person.full_name
