@@ -1,5 +1,4 @@
 import re
-from memory_profiler import profile
 from enums.category_number import CategoryNumber
 from enums.category_type import CategoryType
 from utils.print_helper import double_break_line, break_line, question, print_space, normal_error, separator, print_title_bottom, print_title_both, separate_items
@@ -10,6 +9,7 @@ from entities.voluntary import Voluntary
 from entities.donor import Donor
 from entities.served import Served
 from entities.visitor import Visitor
+# from memory_profiler import profile
 
 class Person:
     def __init__(self, full_name, birth_date, phone, email):

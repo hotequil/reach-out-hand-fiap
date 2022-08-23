@@ -1,6 +1,6 @@
-from memory_profiler import profile
 from operator import attrgetter
 from utils.print_helper import print_title_both, print_space, normal_error, print_bar_bottom, question, print_bar_top, print_title_bottom, separate_items, list_item
+# from memory_profiler import profile
 
 class _PersonNode:
     def __init__(self, person):
