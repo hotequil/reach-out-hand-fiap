@@ -99,15 +99,6 @@ class PeopleAvlTree:
 
         if first_full_name_is_full_name and has_node_left: return self._search(full_name, comparisons, node.left)
 
-        # TODO: test with these lines
-        # comparisons += 1
-        #
-        # if first_full_name_is_full_name and has_node_right: return self._search(full_name, comparisons, node.right)
-        #
-        # comparisons += 1
-        #
-        # if not first_full_name_is_full_name and has_node_left: return self._search(full_name, comparisons, node.left)
-
         comparisons += 1
 
         if not first_full_name_is_full_name and has_node_right: return self._search(full_name, comparisons, node.right)
